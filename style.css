@@ -87,6 +87,8 @@ footer {
 .games {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .today-games {
@@ -101,7 +103,7 @@ footer {
     padding: 5% 1%;
     display: flex;
     flex-direction: column;
-    width: 49%;
+    width: 47%;
     background: #ffffff;
     height: auto;
     border-radius: 5px;
@@ -152,4 +154,21 @@ footer {
 
 .footer-mascot img {
     width: 100%;
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 60%;
+    margin: 2% 0 0;
+}
+
+.games-header {
+    background: #F17000;
+    padding: 1%;
+    color: white;
+    font-weight: 500;
+    font-size: 1.1em;
+    border-radius: 4px;
 }
