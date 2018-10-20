@@ -11,7 +11,7 @@ function loadTodaysGames() {
     };
 
     var utc = new Date().toJSON().slice(0,10).replace(/-/g,'');
-    url = "http://watchat-watchatcore.a3c1.starter-us-west-1.openshiftapps.com/scoreboard/" + utc;
+    url = "https://watchat-watchatcore.a3c1.starter-us-west-1.openshiftapps.com/scoreboard/" + utc;
 
     httpClient.open("GET", url, true);
     httpClient.send();
