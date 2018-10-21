@@ -30,7 +30,7 @@ function loadTodaysGames() {
                     var obj = json.scoreboard[i];
 
                     if (obj.eventIsCompleted.includes("False")) {
-                        var game_template = '<article onclick="roomClicked(this);" class="game" event-id="{#event-id}" title="{#title}"><div class="game-info"><figure class="team-logo"><img src="{#logoHome}"></figure><h2 class="team-abr">{#abbreviationHome}</h2><span class="team-vs">VS.</span><h2 class="team-abr">{#abbreviationAway}</h2><figure class="team-logo"><img src="{#logoAway}"></figure></div></article>';
+                        var game_template = '<article onclick="roomClicked(this);" class="game" event-id="{#event-id}" title="{#title}"><div class="game-info"><figure class="team-logo"><img alt="Logo" src="{#logoHome}"></figure><h2 class="team-abr">{#abbreviationHome}</h2><span class="team-vs">VS.</span><h2 class="team-abr">{#abbreviationAway}</h2><figure class="team-logo"><img alt="Logo" src="{#logoAway}"></figure></div></article>';
 
                         game_template = game_template.replace(/{#event-id}/gi, obj.eventShortName.replace("@", "-").replace(" ", "").replace(/\s/g, "").toLowerCase());
                         game_template = game_template.replace(/{#title}/gi, obj.eventName + "\n" + obj.eventAirTime);
@@ -83,7 +83,7 @@ function loadGameInfo() {
                     var room = obj.eventShortName.replace("@", "-").replace(" ", "").replace(/\s/g, "").toLowerCase();
 
                     if (room.includes(loggedRoom)) {
-                        var game_template = '<article class="game" title="{#title}"><div class="game-info"><figure class="team-logo"><img src="{#logoHome}"></figure><div class="team-score"><h2 class="team-abr">{#displayNameHome}</h2><h2 id="scoreHome" class="score">{#scoreHome}</h2></div><span class="team-vs">VS.</span><div class="team-score"><h2 class="team-abr">{#displayNameAway}</h2><h2 id="scoreAway" class="score">{#scoreAway}</h2></div><figure class="team-logo"><img src="{#logoAway}"></figure></div></article>';
+                        var game_template = '<article class="game" title="{#title}"><div class="game-info"><figure class="team-logo"><img alt="Logo" src="{#logoHome}"></figure><div class="team-score"><h2 class="team-abr">{#displayNameHome}</h2><h2 id="scoreHome" class="score">{#scoreHome}</h2></div><span class="team-vs">VS.</span><div class="team-score"><h2 class="team-abr">{#displayNameAway}</h2><h2 id="scoreAway" class="score">{#scoreAway}</h2></div><figure class="team-logo"><img alt="Logo" src="{#logoAway}"></figure></div></article>';
 
                         game_template = game_template.replace(/{#title}/gi, obj.eventName + "\n" + obj.eventAirTime);
                         game_template = game_template.replace(/{#displayNameHome}/gi, obj.displayNameHome);
@@ -205,7 +205,7 @@ function readMsgs() {
         var messages = firebase.database().ref(loggedRoom + '/messages');
 
         messages.on('child_added', function (snapshot) {
-            var message_template = '<li><article class="message"><figure class="message-avatar"><img src="static/avatar.svg"></figure><div class="message-info"><span class="message-sender">@{#username}</span><span class="message-text">{#message}</span></div></article></li>';
+            var message_template = '<li><article class="message"><figure class="message-avatar"><img alt="Logo" src="static/avatar.svg"></figure><div class="message-info"><span class="message-sender">@{#username}</span><span class="message-text">{#message}</span></div></article></li>';
             message_template = message_template.replace(/{#username}/gi, snapshot.val().username);
             message_template = message_template.replace(/{#message}/gi, snapshot.val().message);
             chatMessages.innerHTML += message_template;
