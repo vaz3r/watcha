@@ -1,0 +1,85 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="style-chat.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,500italic,700|Roboto+Mono:400,500,700|Google+Sans:400,500">
+</head>
+
+<body>
+    <main>
+        <header>
+            <div onclick="homePage();" class="header-container">
+                <div class="box-left">
+                    <h1>Watchat!</h1>
+                </div>
+                <figure class="box-right">
+                    <img src="static/mascot-head.svg" class="mascot-header-desktop" />
+                </figure>
+            </div>
+        </header>
+
+        <section class="games">
+            <div class="game-bar" id="game-info">
+                <!-- <article class="game" title="Toronto Raptors at Washington Wizards">
+                    <div class="game-info">
+                        <figure class="team-logo">
+                            <img src="http://a.espncdn.com/i/teamlogos/nba/500/scoreboard/wsh.png">
+                        </figure>
+                        <div class="team-score">
+                            <h2 class="team-abr">Washington Wizards</h2>
+                            <h2 class="score">101</h2>
+                        </div>
+                        <span class="team-vs">VS.</span>
+                        <div class="team-score">
+                            <h2 class="team-abr">Toronto Raptors</h2>
+                            <h2 class="score">90</h2>
+                        </div>
+                        <figure class="team-logo">
+                            <img src="http://a.espncdn.com/i/teamlogos/nba/500/scoreboard/tor.png">
+                        </figure>
+                    </div>
+                </article> -->
+            </div>
+            <div class="today-games">
+                <div class="chat-container" id="chat-container">
+                    <ul id="chat-messages">
+                        <!-- <li><article class="message"><figure class="message-avatar"><img src="static/mascot-head.svg"></figure><div class="message-info"><span class="message-sender">@{#username}</span><span class="message-text">{#message}</span></div></article></li> -->
+                    </ul>
+                </div>
+                <div class="chat-message">
+                    <textarea id="chat-message-text" onkeypress="onSendMSG(this);" placeholder="Type your message" rows="3"></textarea>
+                    <a onclick="sendMessageBtn();" class="chat-send">SEND</a>
+                </div>
+            </div>
+        </section>
+
+        <audio id="goalAudio">
+            <source src="static/goal.mp3" type="audio/mpeg" muted="muted">
+        </audio>
+
+        <footer>
+            <figure class="footer-mascot">
+                <img src="static/mascot-head.svg" />
+                <h2>Watchat!</h2>
+            </figure>
+        </footer>
+    </main>
+</body>
+<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-database.js"></script>
+<!-- <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase.js"></script> -->
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyBqsxnw0hCJTpThzak3T1qMLxcfj5oh340",
+        authDomain: "watchchat-a6625.firebaseapp.com",
+        databaseURL: "https://watchchat-a6625.firebaseio.com",
+        projectId: "watchchat-a6625",
+        storageBucket: "watchchat-a6625.appspot.com",
+        messagingSenderId: "610025432265"
+    };
+    firebase.initializeApp(config);
+</script>
+<script src="core.js"></script>
+
+</html>
