@@ -241,8 +241,8 @@ footer {
 }
 
 .chat-send {
-    width: 10%;
-    background: orange;
+    width: 80px;
+    background: #F17000;
     padding: 10px 1%;
     text-decoration: none;
     color: white;
@@ -273,4 +273,71 @@ footer {
     flex-wrap: wrap;
     width: 60%;
     margin: 2% 0 0;
+}
+/* RESPONSIVENESS */
+@media only screen and (min-width: 800px) and (max-width: 1043px) {
+    .header-container {
+        width: 85%;
+    }
+
+    .game-bar {
+        width: 85%;
+    }
+
+    .today-games {
+        width: 85%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .header-container {
+        width: 95%;
+    }
+
+    .box-right {
+        width: 100px;
+    }
+
+    .game-bar {
+        width: 95%;
+        margin: 3% 0 0;
+    }
+
+    .game {
+        padding: 2%;
+    }
+
+    .today-games {
+        width: 95%;
+    }
+
+    .game-info {
+        flex-wrap: nowrap;
+    }
+
+    .team-abr {
+        font-size: 130%;
+    }
+
+    .team-logo {
+        width: 30%;
+    }
+}
+
+@media only screen and (max-width: 426px) {
+    .team-abr {
+        font-size: 100%;
+    }
+
+    .team-logo {
+        width: 30%;
+    }
+
+    .team-vs {
+        font-size: 120%;
+    }
+
+    .box-left h1 {
+        font-size: 1.9em;
+    }
 }
